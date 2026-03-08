@@ -25,4 +25,7 @@ print(f'Średnia wypłata: {   round   (total / (len(content) - 1),   2)   }')
 total = 0
 for i in range(1, len(content)):
     print(f'czy na macierzynskim: {content[i][4]}')
-
+    if content[i][4] == 't\n' or content[i][4] == 't':
+        if content[i][3] == 'k':
+            total += 1
+print(f'Liczba Pań na macierzyńskim: {total}')
