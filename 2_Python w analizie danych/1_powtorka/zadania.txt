@@ -1,0 +1,91 @@
+Zadanie 1. Kontrola listy zakupów
+
+Napisz program, który pomaga użytkownikowi sprawdzić, czy powinien kupić wybrane produkty.
+
+Założenia:
+
+Program ma na początku listę produktów dostępnych w domu, np.:
+w_domu = ['chleb', 'mleko', 'ryż', 'mydło', 'kawa']
+Program pyta użytkownika, ile produktów chce sprawdzić.
+Następnie w pętli pobiera od użytkownika nazwy produktów.
+Dla każdego produktu wypisuje:
+masz w domu, nie kupuj
+albo brakuje, kup
+
+Wymagania:
+
+użyj listy,
+użyj input(),
+użyj pętli for,
+użyj instrukcji if.
+
+Wersja rozszerzona:
+
+na końcu wypisz, ile produktów było już w domu, a ile trzeba dokupić,
+zapisz brakujące produkty do osobnej listy i wyświetl ją na końcu.
+
+To zadanie bezpośrednio powtarza motyw z listami zakupów i sprawdzaniem obecności elementu w liście, który pojawia się w przykładach i zadaniach z repo.
+
+Zadanie 2. System logowania z ograniczoną liczbą prób
+
+Napisz program, który symuluje proste logowanie użytkownika.
+
+Założenia:
+
+Prawidłowe hasło jest zapisane w zmiennej, np.:
+poprawne_haslo = 'orlen123'
+Użytkownik ma maksymalnie 3 próby wpisania hasła.
+Jeśli wpisze dobre hasło, program wypisuje:
+Zalogowano poprawnie
+Jeśli po 3 próbach hasło nadal jest błędne, program wypisuje:
+Konto zablokowane
+
+Wymagania:
+
+użyj while,
+użyj licznika prób,
+użyj input(),
+użyj if / else.
+
+Wersja rozszerzona:
+
+po każdej nieudanej próbie pokaż, ile prób jeszcze zostało,
+jeśli użytkownik zaloguje się poprawnie, wypisz po ilu próbach to zrobił.
+
+To zadanie jest zgodne z materiałem o while, while True, liczniku prób i sprawdzaniu hasła.
+
+Zadanie 3. Analiza pliku CSV z danymi pracowników
+
+Masz plik rozliczenie.csv. Napisz program analizujący dane o pracownikach.
+
+Wersja podstawowa — bez pandas:
+
+Odczytaj plik CSV za pomocą open().
+Podziel każdą linię na pola.
+Oblicz:
+sumę wypłat,
+średnią wypłatę,
+liczbę kobiet przebywających na urlopie macierzyńskim.
+Wypisz wyniki w czytelnej formie.
+
+Wersja rozszerzona — z pandas:
+
+Wczytaj plik przez pd.read_csv().
+Dodaj nową kolumnę, np. wyplata_euro, przeliczając wypłatę na euro.
+Wypisz:
+pierwsze 5 wierszy,
+podstawowe statystyki opisowe,
+średnią wypłatę.
+Narysuj jeden wykres:
+histogram wypłat albo
+wykres punktowy pokazujący zależność między wypłatą a liczbą dni urlopu.
+
+Wymagania:
+
+w podstawowej wersji: open(), pętla, listy, rzutowanie na float,
+w rozszerzonej wersji: pandas, matplotlib.
+
+To zadanie jest niemal wprost osadzone w końcowej części materiału, gdzie pojawia się ręczny odczyt rozliczenie.csv, liczenie średniej i analiza pól, a potem pandas, nowe kolumny i wykresy.
+
+
+Czas na zadania powtórkowe - do 11:00
