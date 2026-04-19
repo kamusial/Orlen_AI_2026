@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.datasets import make_circles
+from sklearn.datasets import make_circles, make_moons
 from sklearn.svm import SVC  #clasifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
@@ -8,7 +8,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 
-X, y = make_circles(n_samples=500, factor=0.4, noise=0.6)
+# X, y = make_circles(n_samples=500, factor=0.6, noise=0.2)
+X, y = make_moons(noise=0.2)
 plt.scatter(X[:,0], X[:, 1], c=y)
 plt.show()
 
@@ -21,13 +22,13 @@ print(model.score(X_test, y_test))
 print(pd.DataFrame(confusion_matrix(y_test, model.predict(X_test))))
 
 print('\nKNN')
-model = KNeighborsClassifier()
+model = KNeighborsClassifier(n_neighbors=3, weights='distance')
 model.fit(X_train, y_train)
 print(model.score(X_test, y_test))
 print(pd.DataFrame(confusion_matrix(y_test, model.predict(X_test))))
 
 print('\nDrzewo decyzyjne')
-model = DecisionTreeClassifier(max_depth=6)
+model = DecisionTreeClassifier(criterion='gini', max_depth=6)
 model.fit(X_train, y_train)
 print(model.score(X_test, y_test))
 print(pd.DataFrame(confusion_matrix(y_test, model.predict(X_test))))
@@ -40,4 +41,3 @@ model = SVC(kernel='rbf')
 model.fit(X_train, y_train)
 print(model.score(X_test, y_test))
 print(pd.DataFrame(confusion_matrix(y_test, model.predict(X_test))))
-
