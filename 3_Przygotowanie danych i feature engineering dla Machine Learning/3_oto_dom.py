@@ -21,3 +21,17 @@ q3 = df.describe().loc["75%", 'cena']
 df1 = df[ (df.cena >= q1) & (df.cena <= q3)  ]
 sns.histplot(df1.cena)
 plt.show()
+
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
+X = df1.iloc[:, 2:]
+y = df1.cena
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+print(f'Wspolczynnik kierunkowy: {model.coef_}')
+print( pd.DataFrame  (model.coef_, df1.iloc[:, 2:].columns)   )
+print(f'wyraz wolny: {model.intercept_}')
+print(f'Wynik: {model.score(X_test, y_test)}')
